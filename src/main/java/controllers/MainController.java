@@ -13,13 +13,28 @@ public class MainController {
 
     public MainController(){
         controller = GpioFactory.getInstance();
-        ledPin = controller.provisionDigitalOutputPin(RaspiPin.GPIO_01, "MyLED", PinState.HIGH);
+        ledPin = controller.provisionDigitalOutputPin(RaspiPin.GPIO_01, "MyLED", PinState.LOW);
     }
 
     @RequestMapping("/")
     public String index(){
-        ledPin.toggle();
+        //ledPin.toggle();
+        //System.out.println("включен");
         return "Hallo world!";
+    }
+
+    @RequestMapping("/ledon")
+    public String ledon(){
+        ledPin.blink (200);
+        System.out.println("включен");
+        return "включен";
+    }
+
+    @RequestMapping("/ledoff")
+    public String ledoff(){
+        ledPin.blink (0);
+        System.out.println("включен");
+        return "включен";
     }
 
 }

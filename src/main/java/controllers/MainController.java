@@ -19,7 +19,6 @@ public class MainController {
     @RequestMapping("/")
     public String index(){
         ledPin.toggle();
-
         return "Hallo world!";
     }
 

@@ -20,7 +20,6 @@ public class MainController {
     public String index(){
         ledPin.toggle();
 
-
         return "Hallo world!";
     }
 

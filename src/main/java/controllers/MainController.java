@@ -25,14 +25,14 @@ public class MainController {
 
     @RequestMapping("/ledon")
     public String ledon(){
-        ledPin.blink (200);
+        ledPin.high();
         System.out.println("включен");
         return "включен";
     }
 
     @RequestMapping("/ledoff")
     public String ledoff(){
-        ledPin.blink (0);
+        ledPin.low();
         System.out.println("включен");
         return "включен";
     }

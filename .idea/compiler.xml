@@ -6,11 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="firstPiApp" />
+        <module name="digitIndicator" />
+        <module name="gpioTriggers" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="firstPiApp" target="1.8" />
+      <module name="digitIndicator" target="1.8" />
+      <module name="firstPiApp" target="1.5" />
+      <module name="gpioTriggers" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

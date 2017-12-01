@@ -6,6 +6,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import static app.Application.GPIO_CONTROLLER;
+
+
 @RestController
 public class MainController {
 
@@ -35,21 +38,20 @@ public class MainController {
             PinState.HIGH,
             PinState.LOW};
 
-    private final GpioController controller;
 
     private final GpioPinDigitalOutput[] pinDigitalOutputs;
 
 
     public MainController() {
-        controller = GpioFactory.getInstance();
+
         this.pinDigitalOutputs = new GpioPinDigitalOutput[]{
-                controller.provisionDigitalOutputPin(RaspiPin.GPIO_01, "11", PinState.LOW),
-                controller.provisionDigitalOutputPin(RaspiPin.GPIO_02, "7", PinState.LOW),
-                controller.provisionDigitalOutputPin(RaspiPin.GPIO_03, "4", PinState.LOW),
-                controller.provisionDigitalOutputPin(RaspiPin.GPIO_04, "2", PinState.LOW),
-                controller.provisionDigitalOutputPin(RaspiPin.GPIO_05, "1", PinState.LOW),
-                controller.provisionDigitalOutputPin(RaspiPin.GPIO_06, "5", PinState.LOW),
-                controller.provisionDigitalOutputPin(RaspiPin.GPIO_07, "10", PinState.LOW),
+                GPIO_CONTROLLER.provisionDigitalOutputPin(RaspiPin.GPIO_01, "11", PinState.LOW),
+                GPIO_CONTROLLER.provisionDigitalOutputPin(RaspiPin.GPIO_02, "7", PinState.LOW),
+                GPIO_CONTROLLER.provisionDigitalOutputPin(RaspiPin.GPIO_03, "4", PinState.LOW),
+                GPIO_CONTROLLER.provisionDigitalOutputPin(RaspiPin.GPIO_04, "2", PinState.LOW),
+                GPIO_CONTROLLER.provisionDigitalOutputPin(RaspiPin.GPIO_05, "1", PinState.LOW),
+                GPIO_CONTROLLER.provisionDigitalOutputPin(RaspiPin.GPIO_06, "5", PinState.LOW),
+                GPIO_CONTROLLER.provisionDigitalOutputPin(RaspiPin.GPIO_07, "10", PinState.LOW),
         };
 
     }
